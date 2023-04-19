@@ -10,12 +10,12 @@ app.use(express.static(path.join(__dirname, '../Frontend')));
 
 
 app.use(bodyparser.urlencoded({extended:true}));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Frontend/index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.redirect("http://127.0.0.1:5500/Frontend/index.html");
+// });
 
 
-app.post("/",async(req,res)=>{
+app.post("/form",async(req,res)=>{
     const name=req.body.Name;
     const email=req.body.Email
     const message=req.body.Message;
@@ -39,7 +39,7 @@ app.post("/",async(req,res)=>{
         }
         else{
             console.log("email Sent"+info.response)
-            res.redirect("/")
+            res.redirect("http://127.0.0.1:5500/Frontend/index.html");;
         }
     })
 })
