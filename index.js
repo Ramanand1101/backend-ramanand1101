@@ -39,7 +39,7 @@ app.post("/form",async(req,res)=>{
         }
         else{
             console.log("email Sent"+info.response)
-            res.redirect("http://127.0.0.1:5500/index.html");;
+            res.redirect("https://ramanand1101.github.io/index.html");;
         }
     })
 })
